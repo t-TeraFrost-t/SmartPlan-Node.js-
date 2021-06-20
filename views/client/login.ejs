@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Smart Plan</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="script/login.js"></script>      
+
+
+    
+    
+  </head>
+
+<body>
+  <%- include('../partials/navbar'); -%>
+
+<div class = "container">
+<h2>Log in</h2>
+</div>
+<div class="container">
+  
+  
+    <div class="form-group">
+    <div>
+      <label for="email" id="error" style="color: red;display: none;">Wrong password or email</label>
+    </div>
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember-in" id="remember-in">Remember me</label>
+    </div>
+    <button id="button-log" class="btn btn-default">Continue</button>
+  
+</div>
+
+
+</body>
+</html>

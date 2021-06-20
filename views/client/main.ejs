@@ -1,0 +1,105 @@
+<HTML>
+
+<HEAD>
+
+
+<title>Smart Plan</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" ></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="script/action_scripts.js"></script>
+  <script src="login.js"></script> 
+  <link rel='stylesheet' href="styles/main.css"></style>    
+
+</HEAD>
+<BODY>
+  <%- include('../partials/navbar'); -%>
+<div class="griD">
+  <% data[0].forEach((task)=>{%>
+    <div class='<%=data[2][task.id_importance-1].text_type%> el' id='<%=task.id%>'>
+        <p><%=task.name%></p>
+        <div class='sub-element'>
+            <p><%=task.text_task%></p>
+        </div>    
+      </div>
+  <% });%>
+  <% data[1].forEach((note)=>{%>
+    <div class='note' id='<%=note.id%>'>
+        <p><%=note.name%></p>
+        <div class='sub-element'>
+            <p><%=note.text_note%></p>
+        </div>    
+      </div>
+  <% });%>
+  
+  <div class="plus">
+    <img src="plus-svgrepo-com.svg" class="plus-icon"/>
+    <div class='add-element' id = "show-task-modal"> 
+      <h2>Add task</h2>
+    </div>
+    <div class='add-element' id = "show-note-modal">
+      <h2>Add note</h2>
+    </div>
+  </div>
+</div>
+  
+<div class="ahaada" id="task-modal-creation">
+  
+    
+  <div class="modal-header">
+    <span class="close">&times;</span>
+     <h2>Add a task</h2>
+  </div>
+  <%- include('../partials/task-modal-body'); -%>
+    <button id="button-task" class="btn btn-default">Submit</button>
+  </div>
+</div>
+
+<div class="ahaada" id="note-modal-creation">
+  <div class="modal-header">
+    <span class="close">&times;</span>
+     <h2>Add a note</h2>
+  </div>
+    <%- include('../partials/note-modal-body'); -%>
+    <button id="button-note" class="btn btn-default">Submit</button>
+  </div>
+</div>
+
+<div class="ahaada" id="task-modal-main">   
+  <div class="modal-header">
+    <span class="close">&times;</span>
+     <h2>Add a task</h2>
+  </div>
+  <%- include('../partials/task-modal-body'); -%>
+  <div id="notes-list" class="list">
+    
+  </div>
+    <button id="button-update-task" class="btn btn-default">Update</button>
+    <button id="button-delete-task" class="btn btn-default">Delete</button>
+  </div>
+</div>
+  
+<div class="ahaada" id="note-modal-main">
+  <div class="modal-header">
+    <span class="close">&times;</span>
+     <h2>Add a note</h2>
+  </div>
+    <%- include('../partials/note-modal-body'); -%>
+    <button id="button-update-note" class="btn btn-default">Update</button>
+    <button id="button-delete-note" class="btn btn-default">Delete</button>
+  </div>
+</div>
+  
+</div>
+
+
+
+<!--<div class="vl"></div> -->
+
+
+
+</BODY>
+</HTML>

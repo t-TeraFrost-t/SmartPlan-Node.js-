@@ -1,0 +1,27 @@
+<div class="modal-body">
+      <div>
+        <p id="id-task" style="display: none;"></p>
+        <label for="title">Title</label>
+        <input type="input" class="form-control" id="title" >
+      </div>
+      <div>
+        <label for="text">Text</label>
+        <input type="text" class="form-control" id="text" placeholder="Enter some text" name="text">
+      </div>
+      <div>
+        <label for="importance">Choose a importance:</label>
+        <select id="importance" name="importance">
+            <% data[2].forEach((importance)=>{%>
+            <option value="<%=importance.id%>"><%=importance.text_type%></option>
+            <% });%>
+         </select>
+      </div>
+      <div>
+        <label for="start-date">Task Starts On</label>
+        <input type="date" id="start-date" name="start-date">
+      </div>
+      <div>
+        <label for="end-date">Task Ends On</label>
+        <input type="date" id="end-date" name="end-date">
+      </div>
+    
